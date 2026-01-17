@@ -5,6 +5,7 @@ import 'admin_orders_screen.dart';
 import 'admin_menu_screen.dart';
 import 'login_screen.dart';
 import '../services/auth_service.dart';
+import 'analytics_dashboard.dart';
 
 class AdminHomeScreen extends StatefulWidget {
   final User user;
@@ -112,6 +113,21 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
       ),
     );
   }
+  const SizedBox(height: 16),
+_buildAdminCard(
+  icon: Icons.analytics,
+  title: 'Analytics Dashboard',
+  subtitle: 'View orders, revenue, and charts',
+  color: Colors.purple,
+  onTap: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const AnalyticsDashboard(),
+      ),
+    );
+  },
+),
 
   Widget _buildAdminCard({
     required IconData icon,
